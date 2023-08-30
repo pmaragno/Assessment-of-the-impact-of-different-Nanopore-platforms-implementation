@@ -116,7 +116,7 @@ min_number_sites_higher_30X_ordered <- (min_number_sites_higher_30X[ind])
 # select the top 50 transcripts that have the higher minimum number of sites with coverage at least 30x between the different conditions
 selected_transcripts <- names(min_number_sites_higher_30X_ordered)[1:50]
 
-# save a bed with the coordinates of the 3' UTR of the 50 selected transcripts 
+# save a bed file with the coordinates of the 3' UTR of the 50 selected transcripts 
 # since the annotation gtf file I used contains only the Ensembl transcript id while the transcriptome fasta file contains as transcript name also 
 # other information, like the gene name and the Ensembl gene id, convert the short version in the more complete one
 bam_file <- readGAlignments(path_to_IVTprom, use.names = TRUE)
