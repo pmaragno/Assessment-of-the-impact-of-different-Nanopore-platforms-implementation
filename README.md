@@ -67,6 +67,5 @@ WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/85d62c2c-f508-4567-bcf0-ccd1f6747d9b" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bbd225c7-5cf3-4db0-aacc-19bcd7dafa11" width="300" height="300" />
 
 ### Distribution of the mean coverage to set a cut off for the coverage (saturation at 500x)
-[distribution_mean_coverage_common_analysed_sites_500X.pdf](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/files/12476198/distribution_mean_coverage_common_analysed_sites_500X.pdf)
-
+<img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/fada66db-96e5-4fcd-90c6-035b343e3932" width="400" height="400" />
 
