@@ -43,6 +43,49 @@ Coverage was fixed to 100X on the base of the analysis done in setting_max_cover
 
 ## Results
 ELIGOS results using all the reads on the 3' UTR of the 50 selected transrcipts
+
+| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ------------- | ------------- |------------- | ------------- |
+| # analysed nucleotides in 3UTR | 3,952 (25 tx)  | 3,121 (25 xt) | 2,722 (25 tx) |
+| # filtered hits in 3UTR | 103 (18 tx) | 78 (19 tx) | - | 
+| # filtered hits in 3UTR analysed in both comparisons | 88 (18 tx) | 77 (18 tx) | 70 (17 tx) |  
+
+<img width="892" alt="image" src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/12417127-7291-4228-b3a3-6312383a778b">
+
+
+
+
+
+
+
+
+
+
+Nanocompore
+All reads on 50 selected tx
+WTmin vs IVTprom
+
+WTprom vs IVTprom
+
+Common
+# analysed nucleotides in 3UTR
+13,776 (28 tx)
+19,701 (36 tx)
+13,776 (28 tx)
+# filtered* hits in 3UTR
+81 (21 tx)
+169 (30 tx)
+-
+# filtered* hits in 3UTR analysed
+in both comparisons
+(overlap in the graph below)
+81 (21 tx)
+137 (24 tx)
+64 (18 tx)
+
+
+<img width="892" alt="image" src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/403829c1-349f-4f3e-984b-22f52639db02">
+
 ![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bd57f212-80da-4785-88ac-99ece2306755)
 
 Nanocompore results using all the reads on the 3' UTR of the 50 selected transrcipts
