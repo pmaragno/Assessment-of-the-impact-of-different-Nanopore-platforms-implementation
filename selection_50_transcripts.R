@@ -44,7 +44,7 @@ write.table(bed_3utr_tx, path_bed_3utr_tx, quote = FALSE, row.names = FALSE, col
 
 # function to compute the number of sites with coverage at least 30x in a given region, required in input:
 # bam_file with the mapping of the reads on the transcriptome
-# regions_file is a bed format with the coordinates of the 3' UTR of each transcript
+# regions_file is a file in bed format with the coordinates of the 3' UTR of each transcript
 # output_dir is the path to the output directory
 Calculate_num_sites_coverage_higher_30 <- function(bam_file, regions_file, output_dir) {
   # import the regions_file as a GRanges object
