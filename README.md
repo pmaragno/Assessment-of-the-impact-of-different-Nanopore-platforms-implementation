@@ -60,7 +60,7 @@ ELIGOS            |  Nanocompore
 :-------------------------:|:-------------------------:
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bd57f212-80da-4785-88ac-99ece2306755" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800" width="300" height="300" />
 
-### Overlap between ELIGOS and Nanocompore using all the reads on the 3' UTR of the 50 selected transcripts 
+### Overlap between ELIGOS and Nanocompore using all the reads on the 3' UTR of the 50 selected transcripts - Overlap considering ranges of 10 nt centered around each hit
 
 WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 :-------------------------:|:-------------------------:
@@ -87,8 +87,44 @@ ELIGOS            |  Nanocompore
 :-------------------------:|:-------------------------:
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/580c77ec-b3c7-4a57-946f-d2eedef441ac" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/a01bba41-c7fc-436c-8110-fc784b3e8510" width="300" height="300" />
 
-### Overlap between ELIGOS and Nanocompore results setting coverage max 100x on thee 3' UTR of the 50 selected transcripts
+### Overlap between ELIGOS and Nanocompore results setting coverage max 100x on thee 3' UTR of the 50 selected transcripts - Overlap considering ranges of 10 nt centered around each hit
 
 WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 :-------------------------:|:-------------------------:
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/b810fb3b-4521-4e06-ab0d-4ad8b7357f40" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/2fcb2ab7-67b3-46aa-9ac3-fdbf925bc3af" width="300" height="300" />
+
+
+## Conclusions
+It is clearly visible that there is a strong impact due to the use of a different Nanopore platform for the sequencing of the test and the reference samples: this is confirmed both using ELIGOS and Nanocompore.
+The strong difference in the number of hits detected by both tools when analysing WT MinION vs IVT PromethION or WT PromethION vs IVT PromethION is not due to a different coverage of the 3' UTR of the 50 selected transcripts since it is confirmed also when teh coverage is cut to a maximum threshold.
+
+Furthermore, interestingly the overlap between the results of the two tools, ELIGOS and Nanocompore, for the same comparison is very low. This was expected since the two approaches exploit different information of the sequenced data: the difference between the percent Error of Specific Bases in the test sample with respect to the control, in case of ELIGOS; the shifts in current intensity and the time the nucleic acid sequence resides inside the pore (dwell time), in case of Nanocompore.
+
+
+### Citation
+Li, H. Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics 34, 3094–3100 (2018).
+
+The Sequence Alignment/Map format and SAMtools - PMC. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2723002/.
+
+Morgan, M. et al. Rsamtools: Binary alignment (BAM), FASTA, variant call (BCF), and tabix file import. (2023) doi:10.18129/B9.bioc.Rsamtools.
+
+Decoding the epitranscriptional landscape from native RNA sequences | Nucleic Acids Research | Oxford Academic. https://academic.oup.com/nar/article/49/2/e7/5876284.
+
+RNA modifications detection by comparative Nanopore direct RNA sequencing | Nature Communications. https://www.nature.com/articles/s41467-021-27393-3.
+
+Aboyoun, P., Pagès, H. & Lawrence, M. GenomicRanges: Representation and manipulation of genomic intervals. (2023) doi:10.18129/B9.bioc.GenomicRanges.
+
+Pelizzola, M. & Kishore, K. compEpiTools: Tools for computational epigenomics. (2023) doi:10.18129/B9.bioc.compEpiTools.
+
+Di Tommaso, P. et al. Nextflow enables reproducible computational workflows. Nat. Biotechnol. 35, 316–319 (2017).
+
+Li, H. lh3/seqtk. (2023).
+
+Gamaarachchi, H. et al. GPU accelerated adaptive banded event alignment for rapid comparative nanopore signal analysis. BMC Bioinformatics 21, 343 (2020).
+
+samNormalise.pl · master · David Eccles (gringer) / bioinfscripts · GitLab. GitLab https://gitlab.com/gringer/bioinfscripts/-/blob/master/samNormalise.pl?ref_type=heads (2022).
+
+
+ 
+
+
