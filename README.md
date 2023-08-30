@@ -60,7 +60,7 @@ Coverage was fixed to 100X on the base of the analysis done in setting_max_cover
 | # filtered hits in 3UTR | 81 (21 tx) | 169 (30 tx) | - | 
 | # filtered hits in 3UTR analysed in both comparisons | 81 (21 tx) | 137 (24 tx) | 64 (18 tx) |  
 
-<img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800" width="4" height="4" />
+<img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800" width="100" height="100" />
 
 ![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_nano copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800)
 
