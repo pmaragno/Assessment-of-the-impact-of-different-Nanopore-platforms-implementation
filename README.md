@@ -35,6 +35,15 @@ post_processing_analysis_IVT.R script requires in input for the Nanocompore_resu
 * path_output = path to the directory for saving the overlapping plots
 * path_bed_3utr_top50_tx = path to the directory containing the bed file with the 3' UTR coordinates of the 50 selected transcripts
 
+setting_max_coverage.R script requires in input: 
+* path_to_IVTprom = path to IVT PromethION bam file
+* path_to_WTmin = path to WT MinION bam file
+* path_to_WTprom = path to WT PromethION bam file
+* path_bed_3utr_top50_tx = path to the directory containing the bed file with the 3' UTR coordinates of the 50 selected transcripts
+* output_dir = path to the output directory in which saving the Rda intermediates files 
+* output_pdf_file = path to the pdf file in which saving the histogram with mean coverage distribution for each condition
+* output_pdf_file_500x = path to the pdf file in which saving the histogram with mean coverage distribution for each condition (saturation at 500x)
+
 ## Workflow
 
 Raw fast5 files sequenced on PromethION platform for K562 IVT and K562 WT samples were base-called with command “guppy_basecaller -i <fast5 directory> -r -x 'auto' -s <output directory> --fast5_out -c rna_r9.4.1_70bps_hac_prom.cfg” using Guppy v6.2.1 and Guppy v6.4.6, respectively. Similarly, raw fast5 files sequenced on a MinION flow-cell of GridION platform for K562 WT sample were base-called with Guppy v6.2.1 with command “guppy_basecaller -i <fast5 directory> -r -x 'auto' -s <output directory> --fast5_out -c rna_r9.4.1_70bps_hac.cfg”. 
