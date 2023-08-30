@@ -42,15 +42,30 @@ The analysis was then repeated on a random subset of reads, obtained capping the
 Coverage was fixed to 100X on the base of the analysis done in setting_max_coverage.R script.
 
 ## Results
-### ELIGOS results using all the reads on the 3' UTR of the 50 selected transrcipts
+### ELIGOS results using all the reads on the 3' UTR of the 50 selected transcripts
 
-<img width="892" alt="image" src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/1bb8cd2d-9fda-4c1d-a417-88b22f00a0f4">
+| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ------------- | ------------- |------------- | ------------- |
+| # analysed nucleotides in 3UTR | 3,952 (25 tx)  | 3,121 (25 xt) | 2,722 (25 tx) |
+| # filtered hits in 3UTR | 103 (18 tx) | 78 (19 tx) | - | 
+| # filtered hits in 3UTR analysed in both comparisons | 88 (18 tx) | 77 (18 tx) | 70 (17 tx) |  
 
 ![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bd57f212-80da-4785-88ac-99ece2306755)
 
-### Nanocompore results using all the reads on the 3' UTR of the 50 selected transrcipts
+### Nanocompore results using all the reads on the 3' UTR of the 50 selected transcripts
 
-<img width="892" alt="image" src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/96c2854b-ad0c-4c58-a3a8-7ad7dc46904a">
+| Nanocompore | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ------------- | ------------- |------------- | ------------- |
+| # analysed nucleotides in 3UTR | 13,776 (28 tx) | 19,701 (36 tx) | 13,776 (28 tx) |
+| # filtered hits in 3UTR | 81 (21 tx) | 169 (30 tx) | - | 
+| # filtered hits in 3UTR analysed in both comparisons | 81 (21 tx) | 137 (24 tx) | 64 (18 tx) |  
+
+<width="4" alt="image" src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800">
 
 ![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_nano copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800)
+
+### Overlap between ELIGOS and Nanocompore using all the reads on the 3' UTR of the 50 selected transcripts 
+WT MinION vs IVT PromethION
+
+WT PromethION vs IVT PromethION
 
