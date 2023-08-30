@@ -42,5 +42,9 @@ The analysis was then repeated on a random subset of reads, obtained capping the
 Coverage was fixed to 100X on the base of the analysis done in setting_max_coverage.R script.
 
 ## Results
+ELIGOS results using all the reads on the 3' UTR of the 50 selected transrcipts
+![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bd57f212-80da-4785-88ac-99ece2306755)
 
-![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/41faa13d-5ca0-4346-a59a-c21aad40607a)
+Nanocompore results using all the reads on the 3' UTR of the 50 selected transrcipts
+![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_nano copy-1](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/706bd1cd-a4a5-49da-8b31-e7c6258cb800)
+
