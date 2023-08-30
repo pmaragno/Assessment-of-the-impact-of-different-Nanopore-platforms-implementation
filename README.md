@@ -69,3 +69,26 @@ WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 ### Distribution of the mean coverage to set a cut off for the coverage (saturation at 500x)
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/fada66db-96e5-4fcd-90c6-035b343e3932" width="600" height="600" />
 
+### ELIGOS and Nanocompore results setting coverage max 100x on thee 3' UTR of the 50 selected transcripts
+
+| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ------------- | ------------- |------------- | ------------- |
+| # analysed nucleotides in 3UTR | 3,808 (25 tx)  | 3,171 (25 xt) | 2,697 (25 tx) |
+| # filtered hits in 3UTR | 76 (16 tx) | 54 (16 tx) | - | 
+| # filtered hits in 3UTR analysed in both comparisons | 70 (16 tx) | 53 (16 tx) | 49 (14 tx) |  
+
+| Nanocompore | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ------------- | ------------- |------------- | ------------- |
+| # analysed nucleotides in 3UTR | 10,647 (27 tx) | 15,594 (34 tx) | 10,647 (27 tx) |
+| # filtered hits in 3UTR | 30 (15 tx) | 50 (22 tx) | - | 
+| # filtered hits in 3UTR analysed in both comparisons | 30 (15 tx) | 41 (17 tx) | 20 (12 tx) | 
+
+ELIGOS            |  Nanocompore
+:-------------------------:|:-------------------------:
+<img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/580c77ec-b3c7-4a57-946f-d2eedef441ac" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/a01bba41-c7fc-436c-8110-fc784b3e8510" width="300" height="300" />
+
+### Overlap between ELIGOS and Nanocompore results setting coverage max 100x on thee 3' UTR of the 50 selected transcripts
+
+WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
+:-------------------------:|:-------------------------:
+<img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/b810fb3b-4521-4e06-ab0d-4ad8b7357f40" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/2fcb2ab7-67b3-46aa-9ac3-fdbf925bc3af" width="300" height="300" />
