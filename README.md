@@ -39,7 +39,7 @@ Eventually, the overlap between hits called by ELIGOS and Nanocompore using eith
 
 The analysis was then repeated on a random subset of reads, obtained capping the coverage on the 3’ UTR of the 50 selected transcripts to 100x, using samNormalise.pl script with the commands: “minimap2 -ax map-ont -k 14 <reference_transcriptome.fasta> <reads_3UTR_50tx.fastq> | samtools view -h -F2324 | samtools sort -o <filtered_reads_3UTR_50tx_mapping_on_transcriptome_F2324.bam>”; “samtools view <filtered_reads_3UTR_50tx_mapping_on_transcriptome_F2324.bam> | samNormalise.pl -coverage 100 -format fastq > <reads_3UTR_50tx_cov100.fastq>”. 
 
-Coverage was fixed to 100X on the base of the analysis done in setting_max_coverage.R script.
+Coverage was fixed to 100X on the base of the analysis done in setting_max_coverage.R script in which the mean coverage has been computed for each of the 50 selected transcripts, for each of the samples, considering only the impact of the nucleotides on the 3' UTR with a coverage at least equal to 30x in all the conditions.
 
 ## Results
 ### ELIGOS and Nanocompore results using all the reads on the 3' UTR of the 50 selected transcripts
@@ -65,4 +65,8 @@ ELIGOS            |  Nanocompore
 WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 :-------------------------:|:-------------------------:
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/85d62c2c-f508-4567-bcf0-ccd1f6747d9b" width="300" height="300" />  |  <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/bbd225c7-5cf3-4db0-aacc-19bcd7dafa11" width="300" height="300" />
+
+### Distribution of the mean coverage to set a cut off for the coverage (saturation at 500x)
+[distribution_mean_coverage_common_analysed_sites_500X.pdf](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/files/12476198/distribution_mean_coverage_common_analysed_sites_500X.pdf)
+
 
