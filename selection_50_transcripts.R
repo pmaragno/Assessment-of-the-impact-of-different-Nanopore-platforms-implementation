@@ -4,7 +4,6 @@ suppressMessages(library('GenomicFeatures'))
 suppressMessages(library('GenomicAlignments'))
 suppressMessages(library("Rsamtools"))
 
-# load the gtf annotation file
 for(v in args)
 {
   vTmp <- strsplit(v,"=")[[1]]
