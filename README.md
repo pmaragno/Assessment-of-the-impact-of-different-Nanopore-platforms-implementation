@@ -43,6 +43,4 @@ Coverage was fixed to 100X on the base of the analysis done in setting_max_cover
 
 ## Results
 
-```{r}
-knitr::include_graphics("/Users/paolamarango/Documents/IVT_last_version/results_eligos_IVT_WT_all_reads_top_50_tx/WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy.png")
-```
+![WTmin_vs_IVTprom_WTprom_vs_IVTprom_overlap_hits_in_common_analysed_sites_eligos copy](https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/41faa13d-5ca0-4346-a59a-c21aad40607a)
