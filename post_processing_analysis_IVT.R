@@ -1,6 +1,6 @@
-library(compEpiTools)
-library(GenomicRanges)
-library(ggplot2)
+library('compEpiTools')
+library('GenomicRanges')
+library('ggplot2')
 
 ELIGOS_results <- function(path_input, path_output) {
   
