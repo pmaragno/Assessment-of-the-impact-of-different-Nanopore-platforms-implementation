@@ -123,9 +123,9 @@ WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 
 ## Conclusions
 It is clearly visible that there is a strong impact due to the use of a different Nanopore platform for the sequencing of the test and the reference samples: this is confirmed both using ELIGOS and Nanocompore.
-The strong difference in the number of hits detected by both tools when analysing WT MinION vs IVT PromethION or WT PromethION vs IVT PromethION is not due to a different coverage of the 3' UTR of the 50 selected transcripts since it is confirmed also when teh coverage is cut to a maximum threshold.
+The strong difference in the number of hits detected by both tools when analysing WT MinION vs IVT PromethION or WT PromethION vs IVT PromethION is not due to a different coverage of the 3' UTR of the 50 selected transcripts since it is confirmed also when the coverage is cut to a maximum threshold.
 
-Furthermore, interestingly the overlap between the results of the two tools, ELIGOS and Nanocompore, for the same comparison is very low. This was expected since the two approaches exploit different information of the sequenced data: the difference between the percent Error of Specific Bases in the test sample with respect to the control, in case of ELIGOS; the shifts in current intensity and the time the nucleic acid sequence resides inside the pore (dwell time), in case of Nanocompore.
+Furthermore, interestingly the overlap between the results of the two tools, ELIGOS and Nanocompore, for the same comparison is very low. This was expected since the two approaches exploit different information of the sequenced data: the difference between the percent Error of Specific Bases of the test sample and the one of the control, in case of ELIGOS; the shifts in current intensity and the time the nucleic acid sequence resides inside the pore (dwell time), in case of Nanocompore.
 
 
 ### Citation
