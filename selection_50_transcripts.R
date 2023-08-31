@@ -63,7 +63,9 @@ Calculate_num_sites_coverage_higher_30 <- function(bam_file, regions_file, outpu
   # import bam file
   pileup_tot <- pileup(file = bam_file, index = paste0(bam_file, ".bai"), pileupParam = pu_par)
   
-  # this command must be executed only if the transcript names have the version number and you want to remove it
+  # this command must be executed only if the transcript names in the bam file contain additional information, 
+  # like the gene name and the Ensembl gene id, and you want to remove these additional data taking only the 
+  # Ensembl transcript id
   pileup_tot$seqnames <- gsub(x=as.vector(pileup_tot$seqnames), pattern='\\|.*', replacement = '')
   
   pileup_GR <- GRanges(seqnames = pileup_tot$seqnames,
