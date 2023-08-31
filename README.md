@@ -70,16 +70,11 @@ Coverage was fixed to 100x on the base of the analysis done in setting_max_cover
 
 ## Results
 ### ELIGOS and Nanocompore results using all the reads on the 3' UTR of the 50 selected transcripts
-| ELIGOS | WT MinION vs 
-IVT PromethION | WT PromethION vs 
-IVT PromethION | Common |
+| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
-| # analysed nucleotides 
-in 3' UTR | 3,952 (25 tx)  | 3,121 (25 xt) | 2,722 (25 tx) |
-| # filtered hits 
-in 3' UTR | 103 (18 tx) | 78 (19 tx) | - | 
-| # filtered hits in 3' UTR 
-analysed in both comparisons | 88 (18 tx) | 77 (18 tx) | 70 (17 tx) |  
+| # analysed nucleotides <br /> in 3' UTR | 3,952 (25 tx)  | 3,121 (25 xt) | 2,722 (25 tx) |
+| # filtered hits in 3' UTR | 103 (18 tx) | 78 (19 tx) | - | 
+| # filtered hits in 3' UTR <br /> analysed in both comparisons | 88 (18 tx) | 77 (18 tx) | 70 (17 tx) |  
 
 | Nanocompore | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
