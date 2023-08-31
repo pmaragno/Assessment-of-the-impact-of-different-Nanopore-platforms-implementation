@@ -96,7 +96,7 @@ WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 ### Distribution of the mean coverage to set a cut off for the coverage (saturation at 500x)
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/fada66db-96e5-4fcd-90c6-035b343e3932" width="600" height="600" />
 
-### ELIGOS and Nanocompore results setting coverage max 100x on thee 3' UTR of the 50 selected transcripts
+### ELIGOS and Nanocompore results setting coverage max 100x on the 3' UTR of the 50 selected transcripts
 
 | ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
