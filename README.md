@@ -70,17 +70,17 @@ Coverage was fixed to 100x on the base of the analysis done in setting_max_cover
 
 ## Results
 ### ELIGOS and Nanocompore results using all the reads on the 3' UTR of the 50 selected transcripts
-| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ELIGOS | WT MinION <br /> vs IVT PromethION | WT PromethION <br /> vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
 | # analysed nucleotides <br /> in 3' UTR | 3,952 (25 tx)  | 3,121 (25 xt) | 2,722 (25 tx) |
 | # filtered hits in 3' UTR | 103 (18 tx) | 78 (19 tx) | - | 
 | # filtered hits in 3' UTR <br /> analysed in both comparisons | 88 (18 tx) | 77 (18 tx) | 70 (17 tx) |  
 
-| Nanocompore | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| Nanocompore | WT MinION <br /> vs IVT PromethION | WT PromethION <br /> vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
-| # analysed nucleotides in 3UTR | 13,776 (28 tx) | 19,701 (36 tx) | 13,776 (28 tx) |
-| # filtered hits in 3UTR | 81 (21 tx) | 169 (30 tx) | - | 
-| # filtered hits in 3UTR analysed in both comparisons | 81 (21 tx) | 137 (24 tx) | 64 (18 tx) |  
+| # analysed nucleotides <br /> in 3' UTR | 13,776 (28 tx) | 19,701 (36 tx) | 13,776 (28 tx) |
+| # filtered hits in 3' UTR | 81 (21 tx) | 169 (30 tx) | - | 
+| # filtered hits in 3' UTR <br /> analysed in both comparisons | 81 (21 tx) | 137 (24 tx) | 64 (18 tx) |  
 
 ELIGOS            |  Nanocompore
 :-------------------------:|:-------------------------:
@@ -95,17 +95,17 @@ WT MinION vs IVT PromethION            |  WT PromethION vs IVT PromethION
 <img src="https://github.com/pmaragno/Assessment-of-the-impact-of-different-Nanopore-platforms-implementation/assets/103447655/fada66db-96e5-4fcd-90c6-035b343e3932" width="600" height="600" />
 
 ### ELIGOS and Nanocompore results setting coverage max 100x on the 3' UTR of the 50 selected transcripts
-| ELIGOS | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| ELIGOS | WT MinION <br /> vs IVT PromethION | WT PromethION <br /> vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
-| # analysed nucleotides in 3UTR | 3,808 (25 tx)  | 3,171 (25 xt) | 2,697 (25 tx) |
-| # filtered hits in 3UTR | 76 (16 tx) | 54 (16 tx) | - | 
-| # filtered hits in 3UTR analysed in both comparisons | 70 (16 tx) | 53 (16 tx) | 49 (14 tx) |  
+| # analysed nucleotides <br /> in 3' UTR | 3,808 (25 tx)  | 3,171 (25 xt) | 2,697 (25 tx) |
+| # filtered hits in 3' UTR | 76 (16 tx) | 54 (16 tx) | - | 
+| # filtered hits in 3' UTR <br /> analysed in both comparisons | 70 (16 tx) | 53 (16 tx) | 49 (14 tx) |  
 
-| Nanocompore | WT MinION vs IVT PromethION | WT PromethION vs IVT PromethION | Common |
+| Nanocompore | WT MinION <br /> vs IVT PromethION | WT PromethION <br /> vs IVT PromethION | Common |
 | ------------- | ------------- |------------- | ------------- |
-| # analysed nucleotides in 3UTR | 10,647 (27 tx) | 15,594 (34 tx) | 10,647 (27 tx) |
-| # filtered hits in 3UTR | 30 (15 tx) | 50 (22 tx) | - | 
-| # filtered hits in 3UTR analysed in both comparisons | 30 (15 tx) | 41 (17 tx) | 20 (12 tx) | 
+| # analysed nucleotides <br /> in 3' UTR | 10,647 (27 tx) | 15,594 (34 tx) | 10,647 (27 tx) |
+| # filtered hits in 3' UTR | 30 (15 tx) | 50 (22 tx) | - | 
+| # filtered hits in 3' UTR <br /> analysed in both comparisons | 30 (15 tx) | 41 (17 tx) | 20 (12 tx) | 
 
 ELIGOS            |  Nanocompore
 :-------------------------:|:-------------------------:
