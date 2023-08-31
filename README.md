@@ -34,7 +34,7 @@ post_processing_analysis_IVT.R script requires in input for the Nanocompore_resu
 * path_output = path to the directory where saving the plots with the overlapping between different comparisons
 * path_bed_3utr_top50_tx = path to the directory containing the bed file with the 3' UTR coordinates of the 50 selected transcripts
 
-setting_max_coverage.R script requires in input: 
+mean_coverage_distribution.R script requires in input: 
 * path_to_IVTprom = path to IVT PromethION bam file
 * path_to_WTmin = path to WT MinION bam file
 * path_to_WTprom = path to WT PromethION bam file
@@ -66,7 +66,7 @@ Eventually, the overlap between hits called by ELIGOS and Nanocompore using eith
 
 The analysis was then repeated on a random subset of reads, obtained capping the coverage on the 3’ UTR of the 50 selected transcripts to 100x, using samNormalise.pl script with the commands: “minimap2 -ax map-ont -k 14 <reference_transcriptome.fasta> <reads_3UTR_50tx.fastq> | samtools view -h -F2324 | samtools sort -o <filtered_reads_3UTR_50tx_mapping_on_transcriptome_F2324.bam>”; “samtools view <filtered_reads_3UTR_50tx_mapping_on_transcriptome_F2324.bam> | samNormalise.pl -coverage 100 -format fastq > <reads_3UTR_50tx_cov100.fastq>”. 
 
-Coverage was fixed to 100x on the base of the analysis done in setting_max_coverage.R script in which the mean coverage has been computed for each of the 50 selected transcripts, for each of the samples, considering only the impact of the nucleotides on the 3' UTR with a coverage at least equal to 30x in all the conditions.
+Coverage was fixed to 100x on the base of the analysis done in mean_coverage_distribution.R script in which the mean coverage has been computed for each of the 50 selected transcripts, for each of the samples, considering only the impact of the nucleotides on the 3' UTR with a coverage at least equal to 30x in all the conditions.
 
 ## Results
 ### ELIGOS and Nanocompore results using all the reads on the 3' UTR of the 50 selected transcripts
