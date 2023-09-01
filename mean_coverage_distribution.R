@@ -42,7 +42,7 @@ Calculate_index_sites_coverage_higher_30 <- function(bam_file, regions_file, out
   return(index_analysed_sites)
 }
 
-regions_file <- path_bed_3utr_top50_tx
+regions_file <- path_bed_3utr_top_tx
 
 # for each transcript return the index of the sites with at least 30 reads mapping on them
 index_sites_cover_higher30_IVTprom <- Calculate_index_sites_coverage_higher_30(path_to_IVTprom, regions_file, output_dir)
@@ -130,15 +130,15 @@ hist(unlist(mean_cov_common_sites_WTmin), breaks = 100, main = paste0('WT MinION
 hist(unlist(mean_cov_common_sites_WTprom), breaks = 100, main = paste0('WT PromethION\nmin_mean_coverage=',as.character(round(min(unlist(mean_cov_common_sites_WTprom)),0))),xlab = 'Mean coverage',ylim = c(0,12),col='gray')
 dev.off()
 
-# saturation at 500x
+# saturation
 mean_cov_common_sites_IVTprom_sat <- unlist(mean_cov_common_sites_IVTprom)
-mean_cov_common_sites_IVTprom_sat[which(mean_cov_common_sites_IVTprom_sat > 500)] <- 500
+mean_cov_common_sites_IVTprom_sat[which(mean_cov_common_sites_IVTprom_sat > as.numeric(saturation_level))] <- as.numeric(saturation_level)
 mean_cov_common_sites_WTmin_sat <- unlist(mean_cov_common_sites_WTmin)
-mean_cov_common_sites_WTmin_sat[which(mean_cov_common_sites_WTmin_sat > 500)] <- 500
+mean_cov_common_sites_WTmin_sat[which(mean_cov_common_sites_WTmin_sat > as.numeric(saturation_level))] <- as.numeric(saturation_level)
 mean_cov_common_sites_WTprom_sat <- unlist(mean_cov_common_sites_WTprom)
-mean_cov_common_sites_WTprom_sat[which(mean_cov_common_sites_WTprom_sat > 500)] <- 500
+mean_cov_common_sites_WTprom_sat[which(mean_cov_common_sites_WTprom_sat > as.numeric(saturation_level))] <- as.numeric(saturation_level)
 
-pdf(output_pdf_file_500x)
+pdf(output_pdf_file_saturation)
 par(mfrow=c(2,2))
 hist(unlist(mean_cov_common_sites_IVTprom_sat), breaks = 100, main = paste0('IVT PromethION\nmin_mean_coverage=', as.character(round(min(mean_cov_common_sites_IVTprom_sat),0))),xlab = 'Mean coverage',ylim = c(0,10),col='gray')
 hist(unlist(mean_cov_common_sites_WTmin_sat), breaks = 100, main = paste0('WT MinION\nmin_mean_coverage=', as.character(round(min(mean_cov_common_sites_WTmin_sat),0))),xlab = 'Mean coverage',ylim = c(0,10),col='gray')
