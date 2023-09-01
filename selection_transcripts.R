@@ -115,10 +115,10 @@ min_number_sites_higher_30X <- apply(num_sites_higher_30X,1,min)
 ind <- sort(min_number_sites_higher_30X, decreasing = TRUE, index.return=TRUE)$ix
 min_number_sites_higher_30X_ordered <- (min_number_sites_higher_30X[ind])
 
-# select the top 50 transcripts that have the higher minimum number of sites with coverage at least 30x between the different conditions
-selected_transcripts <- names(min_number_sites_higher_30X_ordered)[1:50]
+# select the top transcripts that have the higher minimum number of sites with coverage at least 30x between the different conditions
+selected_transcripts <- names(min_number_sites_higher_30X_ordered)[1:as.numeric(num_transcripts)]
 
-# save a bed file with the coordinates of the 3' UTR of the 50 selected transcripts 
+# save a bed file with the coordinates of the 3' UTR of the selected transcripts 
 # since the annotation gtf file I used contains only the Ensembl transcript id while the transcriptome fasta file contains as transcript name also 
 # other information, like the gene name and the Ensembl gene id, convert the short version in the more complete one
 bam_file <- readGAlignments(path_to_IVTprom, use.names = TRUE)
@@ -127,6 +127,6 @@ names(tx_complete) <- gsub(x=tx_complete, pattern='\\|.*', replacement = '')
 
 selected_transcripts_complete <- unname(tx_complete[selected_transcripts])
 
-bed_3utr_top50_tx <- cbind(selected_transcripts_complete, tx_3UTR[selected_transcripts,]$start, tx_3UTR[selected_transcripts,]$end, selected_transcripts_complete, '.', as.vector(tx_3UTR[selected_transcripts,]$strand))
-colnames(bed_3utr_top50_tx) <- c("chr", "start", "end","id","score","strand")
-write.table(bed_3utr_top50_tx,path_bed_3utr_top50_tx,quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\t")
+bed_3utr_top_tx <- cbind(selected_transcripts_complete, tx_3UTR[selected_transcripts,]$start, tx_3UTR[selected_transcripts,]$end, selected_transcripts_complete, '.', as.vector(tx_3UTR[selected_transcripts,]$strand))
+colnames(bed_3utr_top_tx) <- c("chr", "start", "end","id","score","strand")
+write.table(bed_3utr_top_tx,path_bed_3utr_top_tx,quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\t")
