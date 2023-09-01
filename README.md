@@ -35,7 +35,7 @@ Usage of post_processing_analysis_IVT.R:
 hits_ELIGOS <- ELIGOS_results(path_input, path_output)
 
 path_input                                          path to the directory containing the <eligos2.combine.txt> output files from ELIGOS analysis
-path_output                                         path to pdf file where saving the plot with the overlapping between different comparisons
+path_output                                         path to the pdf file where saving the plot with the overlapping between different comparisons
 
 hits_ELIGOS_granges <- hits_ELIGOS[[1]]             For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_ELIGOS_values <- hits_ELIGOS[[2]]              For each comparison, the number of hits in sites analysable in both comparisons
