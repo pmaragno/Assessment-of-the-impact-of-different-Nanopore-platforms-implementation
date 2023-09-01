@@ -32,18 +32,18 @@ path_to_WTprom                            path to WT PromethION bam file
 
 ```
 Usage of post_processing_analysis_IVT.R:
-hits_ELIGOS <- ELIGOS_results(path_input, path_output)
+hits_ELIGOS <- ELIGOS_results(path_input, output_pdf_file)
 
 path_input                                          path to the directory containing the <eligos2.combine.txt> output files from ELIGOS analysis
-path_output                                         path to the pdf file where saving the plot with the overlapping between different comparisons
+output_pdf_file                                     path to the pdf file where saving the plot with the overlapping between different comparisons
 
 hits_ELIGOS_granges <- hits_ELIGOS[[1]]             For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_ELIGOS_values <- hits_ELIGOS[[2]]              For each comparison, the number of hits in sites analysable in both comparisons
 
-hits_Nanocompore <- Nanocompore_results(path_input, path_output, path_bed_3utr_top_tx)
+hits_Nanocompore <- Nanocompore_results(path_input, output_pdf_file, path_bed_3utr_top_tx)
 
 path_input                                          path to the directory containing the <outnanocompore_results.tsv> output files from Nanocompore analysis
-path_output                                         path to the pdf file where saving the plot with the overlapping between different comparisons
+output_pdf_file                                     path to the pdf file where saving the plot with the overlapping between different comparisons
 path_bed_3utr_top_tx                                path to the bed file with the 3' UTR coordinates of the selected transcripts
 
 hits_Nanocompore_granges <- hits_Nanocompore[[1]]   For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
@@ -57,7 +57,7 @@ Rscript mean_coverage_distribution.R path_to_IVTprom path_to_WTmin path_to_WTpro
 path_to_IVTprom                           path to IVT PromethION bam file
 path_to_WTmin                             path to WT MinION bam file
 path_to_WTprom                            path to WT PromethION bam file
-path_bed_3utr_top_tx                      path to the directory containing the bed file with the 3' UTR coordinates of the selected transcripts
+path_bed_3utr_top_tx                      path to the bed file with the 3' UTR coordinates of the selected transcripts
 output_dir                                path to the output directory where saving the Rda intermediates files
 output_pdf_file                           path to the pdf file where saving the histogram with the mean coverage distribution for each condition
 saturation_level                          value of maximum mean coverage for the saturation
