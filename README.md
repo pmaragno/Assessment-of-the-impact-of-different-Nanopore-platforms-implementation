@@ -21,9 +21,9 @@ Usage of selection_transcripts.R:
 Rscript selection_transcripts.R gtf_file path_bed_3utr_tx num_transcripts path_bed_3utr_top_tx output_dir path_to_IVTprom path_to_WTmin path_to_WTprom
 
 gtf_file                                  path to the gtf annotation file
-path_bed_3utr_tx                          path to the directory where saving the bed file with the 3' UTR coordinates of all the transcripts
+path_bed_3utr_tx                          path to the bed file where saving the 3' UTR coordinates of all the transcripts
 num_transcripts                           number of top trascripts to select
-path_bed_3utr_top_tx                      path to the directory where saving the bed file with the 3' UTR coordinates of the selected transcripts
+path_bed_3utr_top_tx                      path to the bed file where saving the 3' UTR coordinates of the selected transcripts
 output_dir                                path to the output directory where saving the Rda intermediates files
 path_to_IVTprom                           path to IVT PromethION bam file
 path_to_WTmin                             path to WT MinION bam file
@@ -34,17 +34,17 @@ path_to_WTprom                            path to WT PromethION bam file
 Usage of post_processing_analysis_IVT.R:
 hits_ELIGOS <- ELIGOS_results(path_input, path_output)
 
-path_input                                          path to the directory containing the <eligos2.combine.txt> output files of ELIGOS analysis
-path_output                                         path to the directory where saving the plots with the overlapping between different comparisons
+path_input                                          path to the directory containing the <eligos2.combine.txt> output files from ELIGOS analysis
+path_output                                         path to pdf file where saving the plot with the overlapping between different comparisons
 
 hits_ELIGOS_granges <- hits_ELIGOS[[1]]             For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_ELIGOS_values <- hits_ELIGOS[[2]]              For each comparison, the number of hits in sites analysable in both comparisons
 
 hits_Nanocompore <- Nanocompore_results(path_input, path_output, path_bed_3utr_top_tx)
 
-path_input                                          path to the directory containing the <outnanocompore_results.tsv> output files of Nanocompore analysis
-path_output                                         path to the directory where saving the plots with the overlapping between different comparisons
-path_bed_3utr_top_tx                                path to the directory containing the bed file with the 3' UTR coordinates of the selected transcripts
+path_input                                          path to the directory containing the <outnanocompore_results.tsv> output files from Nanocompore analysis
+path_output                                         path to the pdf file where saving the plot with the overlapping between different comparisons
+path_bed_3utr_top_tx                                path to the bed file with the 3' UTR coordinates of the selected transcripts
 
 hits_Nanocompore_granges <- hits_Nanocompore[[1]]   For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_Nanocompore_values <- hits_Nanocompore[[2]]    For each comparison, the number of hits in sites analysable in both comparisons
