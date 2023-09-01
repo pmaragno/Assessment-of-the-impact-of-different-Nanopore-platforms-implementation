@@ -11,7 +11,7 @@ The detection of RNA modifications was performed in parallel with two different 
 
 Furthermore, the analysis was implemented both using all the reads mapping on the 3' UTR of the 50 selected transcripts and capping the coverage on the 3’ UTR of the these transcripts to 100x to assess if there is an impact linked to the different transcript coverage.  
 
-## Getting started
+## Usage
 link to gtf annotation file: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_36/gencode.v36.annotation.gtf.gz
 
 link to transcriptome fasta file:
