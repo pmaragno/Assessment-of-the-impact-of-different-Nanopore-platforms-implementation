@@ -145,7 +145,7 @@ ELIGOS_results <- function(path_input, path_output) {
   return(hits_common)
 }
 
-Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top50_tx) {
+Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top_tx) {
   
   # create a grange object with all the nucleotides that have been analysed by Nanocompore, so those with a coverage of at least 30x
   analysed_sites <- function(dir) {
@@ -171,31 +171,31 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top50_tx)
   analysed_sites_comparison_2 <- analysed_sites(path_input)[[2]]
   analysed_sites_reduced_comparison_2 <- reduce(analysed_sites_comparison_2)
   
-  # load the coordinates of the 3' UTR of the 50 selected transcripts 
-  coordinates_3utr_50tx <- read.table(path_bed_3utr_top50_tx)
+  # load the coordinates of the 3' UTR of the selected transcripts 
+  coordinates_3utr_tx <- read.table(path_bed_3utr_top_tx)
   
-  coordinates_3utr_50tx <- GRanges(seqnames = coordinates_3utr_50tx$V1,
-                                   ranges = IRanges(start = coordinates_3utr_50tx$V2, end=coordinates_3utr_50tx$V3), 
-                                   strand = Rle(coordinates_3utr_50tx$V6))
+  coordinates_3utr_tx <- GRanges(seqnames = coordinates_3utr_tx$V1,
+                                   ranges = IRanges(start = coordinates_3utr_tx$V2, end=coordinates_3utr_tx$V3), 
+                                   strand = Rle(coordinates_3utr_tx$V6))
   
-  # keep only the analysed sites that are in the 3' UTR of the 50 selected transcripts
-  analysed_sites_reduced_comparison_1_3UTR_50tx <- findOverlaps(analysed_sites_reduced_comparison_1,coordinates_3utr_50tx, type = 'any')
-  analysed_sites_reduced_comparison_1_3UTR_50tx <- analysed_sites_reduced_comparison_1[unique(queryHits(analysed_sites_reduced_comparison_1_3UTR_50tx))]
-  analysed_sites_reduced_comparison_1_3UTR_50tx <- reduce(analysed_sites_reduced_comparison_1_3UTR_50tx)
-  print(paste(unique(analysed_sites_comparison_1$sample), 'has', as.character(sum(width(unique(analysed_sites_reduced_comparison_1_3UTR_50tx)))), 'analysed nucleotides, distributed on',
-              as.character(length(unique(as.vector(seqnames(analysed_sites_reduced_comparison_1_3UTR_50tx))))), 'transcripts'))
+  # keep only the analysed sites that are in the 3' UTR of the selected transcripts
+  analysed_sites_reduced_comparison_1_3UTR_tx <- findOverlaps(analysed_sites_reduced_comparison_1,coordinates_3utr_tx, type = 'any')
+  analysed_sites_reduced_comparison_1_3UTR_tx <- analysed_sites_reduced_comparison_1[unique(queryHits(analysed_sites_reduced_comparison_1_3UTR_tx))]
+  analysed_sites_reduced_comparison_1_3UTR_tx <- reduce(analysed_sites_reduced_comparison_1_3UTR_tx)
+  print(paste(unique(analysed_sites_comparison_1$sample), 'has', as.character(sum(width(unique(analysed_sites_reduced_comparison_1_3UTR_tx)))), 'analysed nucleotides, distributed on',
+              as.character(length(unique(as.vector(seqnames(analysed_sites_reduced_comparison_1_3UTR_tx))))), 'transcripts'))
   
-  analysed_sites_reduced_comparison_2_3UTR_50tx <- findOverlaps(analysed_sites_reduced_comparison_2,coordinates_3utr_50tx, type = 'any')
-  analysed_sites_reduced_comparison_2_3UTR_50tx <- analysed_sites_reduced_comparison_2[unique(queryHits(analysed_sites_reduced_comparison_2_3UTR_50tx))]
-  analysed_sites_reduced_comparison_2_3UTR_50tx <- reduce(analysed_sites_reduced_comparison_2_3UTR_50tx)
-  print(paste(unique(analysed_sites_comparison_2$sample), 'has', as.character(sum(width(unique(analysed_sites_reduced_comparison_2_3UTR_50tx)))), 'analysed nucleotides, distributed on',
-              as.character(length(unique(as.vector(seqnames(analysed_sites_reduced_comparison_2_3UTR_50tx))))), 'transcripts'))
+  analysed_sites_reduced_comparison_2_3UTR_tx <- findOverlaps(analysed_sites_reduced_comparison_2,coordinates_3utr_tx, type = 'any')
+  analysed_sites_reduced_comparison_2_3UTR_tx <- analysed_sites_reduced_comparison_2[unique(queryHits(analysed_sites_reduced_comparison_2_3UTR_tx))]
+  analysed_sites_reduced_comparison_2_3UTR_tx <- reduce(analysed_sites_reduced_comparison_2_3UTR_tx)
+  print(paste(unique(analysed_sites_comparison_2$sample), 'has', as.character(sum(width(unique(analysed_sites_reduced_comparison_2_3UTR_tx)))), 'analysed nucleotides, distributed on',
+              as.character(length(unique(as.vector(seqnames(analysed_sites_reduced_comparison_2_3UTR_tx))))), 'transcripts'))
   
-  smaller_grange <- analysed_sites_reduced_comparison_1_3UTR_50tx
-  bigger_grange <- analysed_sites_reduced_comparison_2_3UTR_50tx
-  if (sum(width(unique(analysed_sites_reduced_comparison_1_3UTR_50tx))) > sum(width(unique(analysed_sites_reduced_comparison_2_3UTR_50tx)))) {
-    smaller_grange <- analysed_sites_reduced_comparison_2_3UTR_50tx
-    bigger_grange <- analysed_sites_reduced_comparison_1_3UTR_50tx
+  smaller_grange <- analysed_sites_reduced_comparison_1_3UTR_tx
+  bigger_grange <- analysed_sites_reduced_comparison_2_3UTR_tx
+  if (sum(width(unique(analysed_sites_reduced_comparison_1_3UTR_tx))) > sum(width(unique(analysed_sites_reduced_comparison_2_3UTR_tx)))) {
+    smaller_grange <- analysed_sites_reduced_comparison_2_3UTR_tx
+    bigger_grange <- analysed_sites_reduced_comparison_1_3UTR_tx
   }
   
   # identify the nucleotides analysed in both comparisons
@@ -243,18 +243,18 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top50_tx)
   hits_10nt_condition_2 <- hits(path_input,5)[[2]]
   hits_10nt_reduced_condition_2 <- reduce(hits_10nt_condition_2)
   
-  # keep only the expanded hits that are in the 3' UTR of the 50 selected transcripts
-  hits_10nt_condition_1_3UTR_50tx <- findOverlaps(hits_10nt_reduced_condition_1,coordinates_3utr_50tx, type = 'any')
-  hits_10nt_condition_1_3UTR_50tx <- hits_10nt_reduced_condition_1[unique(queryHits(hits_10nt_condition_1_3UTR_50tx))]
-  hits_10nt_condition_1_3UTR_50tx <- reduce(hits_10nt_condition_1_3UTR_50tx)
-  print(paste(unique(hits_10nt_condition_1$sample), 'has', as.character(length(unique(hits_10nt_condition_1_3UTR_50tx))), 'hits, distributed on',
-              as.character(length(unique(as.vector(seqnames(hits_10nt_condition_1_3UTR_50tx))))), 'transcripts'))
+  # keep only the expanded hits that are in the 3' UTR of the selected transcripts
+  hits_10nt_condition_1_3UTR_tx <- findOverlaps(hits_10nt_reduced_condition_1,coordinates_3utr_tx, type = 'any')
+  hits_10nt_condition_1_3UTR_tx <- hits_10nt_reduced_condition_1[unique(queryHits(hits_10nt_condition_1_3UTR_tx))]
+  hits_10nt_condition_1_3UTR_tx <- reduce(hits_10nt_condition_1_3UTR_tx)
+  print(paste(unique(hits_10nt_condition_1$sample), 'has', as.character(length(unique(hits_10nt_condition_1_3UTR_tx))), 'hits, distributed on',
+              as.character(length(unique(as.vector(seqnames(hits_10nt_condition_1_3UTR_tx))))), 'transcripts'))
   
-  hits_10nt_condition_2_3UTR_50tx <- findOverlaps(hits_10nt_reduced_condition_2,coordinates_3utr_50tx, type = 'any')
-  hits_10nt_condition_2_3UTR_50tx <- hits_10nt_reduced_condition_2[unique(queryHits(hits_10nt_condition_2_3UTR_50tx))]
-  hits_10nt_condition_2_3UTR_50tx <- reduce(hits_10nt_condition_2_3UTR_50tx)
-  print(paste(unique(hits_10nt_condition_2$sample), 'has', as.character(length(unique(hits_10nt_condition_2_3UTR_50tx))), 'hits, distributed on',
-              as.character(length(unique(as.vector(seqnames(hits_10nt_condition_2_3UTR_50tx))))), 'transcripts'))
+  hits_10nt_condition_2_3UTR_tx <- findOverlaps(hits_10nt_reduced_condition_2,coordinates_3utr_tx, type = 'any')
+  hits_10nt_condition_2_3UTR_tx <- hits_10nt_reduced_condition_2[unique(queryHits(hits_10nt_condition_2_3UTR_tx))]
+  hits_10nt_condition_2_3UTR_tx <- reduce(hits_10nt_condition_2_3UTR_tx)
+  print(paste(unique(hits_10nt_condition_2$sample), 'has', as.character(length(unique(hits_10nt_condition_2_3UTR_tx))), 'hits, distributed on',
+              as.character(length(unique(as.vector(seqnames(hits_10nt_condition_2_3UTR_tx))))), 'transcripts'))
   
   # identify the single nucleotides that fulfill the parameters without range expansion
   hits_condition_1 <- hits(path_input,0)[[1]]
@@ -262,44 +262,44 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top50_tx)
   hits_condition_2 <- hits(path_input,0)[[2]]
   hits_reduced_condition_2 <- reduce(hits_condition_2)
   
-  # keep only the single base hits that are in the 3' UTR of the 50 selected transcripts
-  hits_reduced_condition_1_3UTR_50tx <- findOverlaps(hits_reduced_condition_1,coordinates_3utr_50tx, type = 'any')
-  hits_reduced_condition_1_3UTR_50tx <- hits_reduced_condition_1[unique(queryHits(hits_reduced_condition_1_3UTR_50tx))]
-  hits_reduced_condition_1_3UTR_50tx <- reduce(hits_reduced_condition_1_3UTR_50tx)
+  # keep only the single base hits that are in the 3' UTR of the selected transcripts
+  hits_reduced_condition_1_3UTR_tx <- findOverlaps(hits_reduced_condition_1,coordinates_3utr_tx, type = 'any')
+  hits_reduced_condition_1_3UTR_tx <- hits_reduced_condition_1[unique(queryHits(hits_reduced_condition_1_3UTR_tx))]
+  hits_reduced_condition_1_3UTR_tx <- reduce(hits_reduced_condition_1_3UTR_tx)
   
-  hits_reduced_condition_2_3UTR_50tx <- findOverlaps(hits_reduced_condition_2,coordinates_3utr_50tx, type = 'any')
-  hits_reduced_condition_2_3UTR_50tx <- hits_reduced_condition_2[unique(queryHits(hits_reduced_condition_2_3UTR_50tx))]
-  hits_reduced_condition_2_3UTR_50tx <- reduce(hits_reduced_condition_2_3UTR_50tx)
+  hits_reduced_condition_2_3UTR_tx <- findOverlaps(hits_reduced_condition_2,coordinates_3utr_tx, type = 'any')
+  hits_reduced_condition_2_3UTR_tx <- hits_reduced_condition_2[unique(queryHits(hits_reduced_condition_2_3UTR_tx))]
+  hits_reduced_condition_2_3UTR_tx <- reduce(hits_reduced_condition_2_3UTR_tx)
   
   # keep only the modified nucleotides that are in sites that have been analysed in both comparisons
-  hits_reduced_condition_1_3UTR_50tx_common <- findOverlaps(hits_reduced_condition_1_3UTR_50tx, analysed_sites_both_comparisons, type = 'any')
-  hits_reduced_condition_1_3UTR_50tx_common <- hits_reduced_condition_1_3UTR_50tx[unique(queryHits(hits_reduced_condition_1_3UTR_50tx_common))]
-  hits_reduced_condition_1_3UTR_50tx_common <- reduce(hits_reduced_condition_1_3UTR_50tx_common)
+  hits_reduced_condition_1_3UTR_tx_common <- findOverlaps(hits_reduced_condition_1_3UTR_tx, analysed_sites_both_comparisons, type = 'any')
+  hits_reduced_condition_1_3UTR_tx_common <- hits_reduced_condition_1_3UTR_tx[unique(queryHits(hits_reduced_condition_1_3UTR_tx_common))]
+  hits_reduced_condition_1_3UTR_tx_common <- reduce(hits_reduced_condition_1_3UTR_tx_common)
   
-  hits_reduced_condition_2_3UTR_50tx_common <- findOverlaps(hits_reduced_condition_2_3UTR_50tx, analysed_sites_both_comparisons, type = 'any')
-  hits_reduced_condition_2_3UTR_50tx_common <- hits_reduced_condition_2_3UTR_50tx[unique(queryHits(hits_reduced_condition_2_3UTR_50tx_common))]
-  hits_reduced_condition_2_3UTR_50tx_common <- reduce(hits_reduced_condition_2_3UTR_50tx_common)
+  hits_reduced_condition_2_3UTR_tx_common <- findOverlaps(hits_reduced_condition_2_3UTR_tx, analysed_sites_both_comparisons, type = 'any')
+  hits_reduced_condition_2_3UTR_tx_common <- hits_reduced_condition_2_3UTR_tx[unique(queryHits(hits_reduced_condition_2_3UTR_tx_common))]
+  hits_reduced_condition_2_3UTR_tx_common <- reduce(hits_reduced_condition_2_3UTR_tx_common)
   
   # expand the hits in the analysed sites by both the comparisons creating a range of 10 nucleotides centered around the corresponding hit
-  start(hits_reduced_condition_1_3UTR_50tx_common) <- start(hits_reduced_condition_1_3UTR_50tx_common) -5
-  end(hits_reduced_condition_1_3UTR_50tx_common) <- end(hits_reduced_condition_1_3UTR_50tx_common) +5
-  hits_reduced_condition_1_3UTR_50tx_common <- reduce(hits_reduced_condition_1_3UTR_50tx_common)
-  print(paste(unique(hits_condition_1$sample), 'has', as.character(length(unique(hits_reduced_condition_1_3UTR_50tx_common))), 
-              'hits in sites analysed by both the comparisons, distributed on', as.character(length(unique(as.vector(seqnames(hits_reduced_condition_1_3UTR_50tx_common))))),
+  start(hits_reduced_condition_1_3UTR_tx_common) <- start(hits_reduced_condition_1_3UTR_tx_common) -5
+  end(hits_reduced_condition_1_3UTR_tx_common) <- end(hits_reduced_condition_1_3UTR_tx_common) +5
+  hits_reduced_condition_1_3UTR_tx_common <- reduce(hits_reduced_condition_1_3UTR_tx_common)
+  print(paste(unique(hits_condition_1$sample), 'has', as.character(length(unique(hits_reduced_condition_1_3UTR_tx_common))), 
+              'hits in sites analysed by both the comparisons, distributed on', as.character(length(unique(as.vector(seqnames(hits_reduced_condition_1_3UTR_tx_common))))),
               'transcripts'))
   
-  start(hits_reduced_condition_2_3UTR_50tx_common) <- start(hits_reduced_condition_2_3UTR_50tx_common) -5
-  end(hits_reduced_condition_2_3UTR_50tx_common) <- end(hits_reduced_condition_2_3UTR_50tx_common) +5
-  hits_reduced_condition_2_3UTR_50tx_common <- reduce(hits_reduced_condition_2_3UTR_50tx_common)
-  print(paste(unique(hits_condition_2$sample), 'has', as.character(length(unique(hits_reduced_condition_2_3UTR_50tx_common))), 
-              'hits in sites analysed by both the comparisons, distributed on', as.character(length(unique(as.vector(seqnames(hits_reduced_condition_2_3UTR_50tx_common))))),
+  start(hits_reduced_condition_2_3UTR_tx_common) <- start(hits_reduced_condition_2_3UTR_tx_common) -5
+  end(hits_reduced_condition_2_3UTR_tx_common) <- end(hits_reduced_condition_2_3UTR_tx_common) +5
+  hits_reduced_condition_2_3UTR_tx_common <- reduce(hits_reduced_condition_2_3UTR_tx_common)
+  print(paste(unique(hits_condition_2$sample), 'has', as.character(length(unique(hits_reduced_condition_2_3UTR_tx_common))), 
+              'hits in sites analysed by both the comparisons, distributed on', as.character(length(unique(as.vector(seqnames(hits_reduced_condition_2_3UTR_tx_common))))),
               'transcripts'))
   
-  smaller_grange <- hits_reduced_condition_1_3UTR_50tx_common
-  bigger_grange <- hits_reduced_condition_2_3UTR_50tx_common
-  if (length(unique(hits_reduced_condition_1_3UTR_50tx_common)) > length(unique(hits_reduced_condition_2_3UTR_50tx_common))) {
-    smaller_grange <- hits_reduced_condition_2_3UTR_50tx_common
-    bigger_grange <- hits_reduced_condition_1_3UTR_50tx_common
+  smaller_grange <- hits_reduced_condition_1_3UTR_tx_common
+  bigger_grange <- hits_reduced_condition_2_3UTR_tx_common
+  if (length(unique(hits_reduced_condition_1_3UTR_tx_common)) > length(unique(hits_reduced_condition_2_3UTR_tx_common))) {
+    smaller_grange <- hits_reduced_condition_2_3UTR_tx_common
+    bigger_grange <- hits_reduced_condition_1_3UTR_tx_common
   }
   
   intersection_hits <- findOverlaps(smaller_grange,bigger_grange, type = 'any')
@@ -308,17 +308,17 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top50_tx)
   print(paste('WT MinION vs IVT PromethION comparison and WT PromethION vs IVT PromethION one have', as.character(length(unique(intersection_hits))), 
               'hits in common among those that are in sites analysable in both comparisons. These hits are on', as.character(length(unique(as.vector(seqnames(intersection_hits))))), 'transcripts'))
   
-  intersection_hits <- list(hits_reduced_condition_1_3UTR_50tx_common, hits_reduced_condition_2_3UTR_50tx_common)
+  intersection_hits <- list(hits_reduced_condition_1_3UTR_tx_common, hits_reduced_condition_2_3UTR_tx_common)
   names(intersection_hits) <- c(unique(hits_condition_1$sample), unique(hits_condition_2$sample))
   
   pdf(file = path_output, width = 4, height = 4)
   overlapOfGRanges(intersection_hits,plot = TRUE)
   dev.off()
   
-  hits_common_granges <- list(hits_reduced_condition_1_3UTR_50tx_common,hits_reduced_condition_2_3UTR_50tx_common)
+  hits_common_granges <- list(hits_reduced_condition_1_3UTR_tx_common,hits_reduced_condition_2_3UTR_tx_common)
   names(hits_common_granges) <- c(unique(hits_condition_1$sample),unique(hits_condition_2$sample))
   
-  hits_common_values <- c(length(unique(hits_reduced_condition_1_3UTR_50tx_common)),length(unique(hits_reduced_condition_2_3UTR_50tx_common)))
+  hits_common_values <- c(length(unique(hits_reduced_condition_1_3UTR_tx_common)),length(unique(hits_reduced_condition_2_3UTR_tx_common)))
   names(hits_common_values) <- c(unique(hits_condition_1$sample),unique(hits_condition_2$sample))
   
   hits_common <- list(hits_common_granges, hits_common_values)
