@@ -2,7 +2,7 @@ library('compEpiTools')
 library('GenomicRanges')
 library('ggplot2')
 
-ELIGOS_results <- function(path_input, path_output) {
+ELIGOS_results <- function(path_input, output_pdf_file) {
   
   # create a grange object with all the nucleotides that have been analysed by ELIGOS, so those with a coverage of at least 20x
   analysed_sites <- function(dir) {
@@ -131,7 +131,7 @@ ELIGOS_results <- function(path_input, path_output) {
   intersection_hits <- list(hits_reduced_condition_1_common, hits_reduced_condition_2_common)
   names(intersection_hits) <- c(unique(hits_condition_1$sample), unique(hits_condition_2$sample))
   
-  pdf(file = path_output, width = 4, height = 4)
+  pdf(file = output_pdf_file, width = 4, height = 4)
   overlapOfGRanges(intersection_hits,plot = TRUE)
   dev.off()
   
@@ -145,7 +145,7 @@ ELIGOS_results <- function(path_input, path_output) {
   return(hits_common)
 }
 
-Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top_tx) {
+Nanocompore_results <- function(path_input, output_pdf_file, path_bed_3utr_top_tx) {
   
   # create a grange object with all the nucleotides that have been analysed by Nanocompore, so those with a coverage of at least 30x
   analysed_sites <- function(dir) {
@@ -311,7 +311,7 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top_tx) {
   intersection_hits <- list(hits_reduced_condition_1_3UTR_tx_common, hits_reduced_condition_2_3UTR_tx_common)
   names(intersection_hits) <- c(unique(hits_condition_1$sample), unique(hits_condition_2$sample))
   
-  pdf(file = path_output, width = 4, height = 4)
+  pdf(file = output_pdf_file, width = 4, height = 4)
   overlapOfGRanges(intersection_hits,plot = TRUE)
   dev.off()
   
@@ -329,7 +329,7 @@ Nanocompore_results <- function(path_input, path_output, path_bed_3utr_top_tx) {
 # WT PromethION vs IVT PromethION one
 path_ELIGOS_results <- list.files(path = path_ELIGOS_output, pattern = "txt", full.names = TRUE)
 
-hits_ELIGOS <- ELIGOS_results(path_ELIGOS_results, path_output)
+hits_ELIGOS <- ELIGOS_results(path_ELIGOS_results, output_pdf_file)
 
 hits_ELIGOS_granges <- hits_ELIGOS[[1]]
 hits_ELIGOS_values <- hits_ELIGOS[[2]]
@@ -338,7 +338,7 @@ hits_ELIGOS_values <- hits_ELIGOS[[2]]
 # WT PromethION vs IVT PromethION one
 path_Nanocompore_results <- list.files(path = path_Nanocompore_output, pattern = "tsv", full.names = TRUE)
 
-hits_Nanocompore <- Nanocompore_results(path_Nanocompore_results, path_output, path_bed_3utr_top_tx)
+hits_Nanocompore <- Nanocompore_results(path_Nanocompore_results, output_pdf_file, path_bed_3utr_top_tx)
 
 hits_Nanocompore_granges <- hits_Nanocompore[[1]]
 hits_Nanocompore_values <- hits_Nanocompore[[2]]
