@@ -327,18 +327,18 @@ Nanocompore_results <- function(path_input, output_pdf_file, path_bed_3utr_top_t
 
 # path to the directory containing the result of ELIGOS analysis for WT MinION vs IVT PromethION comparison and  
 # WT PromethION vs IVT PromethION one
-path_ELIGOS_results <- list.files(path = path_ELIGOS_output, pattern = "txt", full.names = TRUE)
+path_input <- list.files(path = path_ELIGOS_output, pattern = "txt", full.names = TRUE)
 
-hits_ELIGOS <- ELIGOS_results(path_ELIGOS_results, output_pdf_file)
+hits_ELIGOS <- ELIGOS_results(path_input, output_pdf_file)
 
 hits_ELIGOS_granges <- hits_ELIGOS[[1]]
 hits_ELIGOS_values <- hits_ELIGOS[[2]]
 
 # path to the directory containing the result of Nanocompore analysis for WT MinION vs IVT PromethION comparison and  
 # WT PromethION vs IVT PromethION one
-path_Nanocompore_results <- list.files(path = path_Nanocompore_output, pattern = "tsv", full.names = TRUE)
+path_input <- list.files(path = path_Nanocompore_output, pattern = "tsv", full.names = TRUE)
 
-hits_Nanocompore <- Nanocompore_results(path_Nanocompore_results, output_pdf_file, path_bed_3utr_top_tx)
+hits_Nanocompore <- Nanocompore_results(path_input, output_pdf_file, path_bed_3utr_top_tx)
 
 hits_Nanocompore_granges <- hits_Nanocompore[[1]]
 hits_Nanocompore_values <- hits_Nanocompore[[2]]
