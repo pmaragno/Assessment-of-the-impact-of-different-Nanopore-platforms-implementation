@@ -338,7 +338,7 @@ hits_ELIGOS_values <- hits_ELIGOS[[2]]
 # WT PromethION vs IVT PromethION one
 path_Nanocompore_results <- list.files(path = path_Nanocompore_output, pattern = "tsv", full.names = TRUE)
 
-hits_Nanocompore <- Nanocompore_results(path_Nanocompore_results, path_output, path_bed_3utr_top50_tx)
+hits_Nanocompore <- Nanocompore_results(path_Nanocompore_results, path_output, path_bed_3utr_top_tx)
 
 hits_Nanocompore_granges <- hits_Nanocompore[[1]]
 hits_Nanocompore_values <- hits_Nanocompore[[2]]
