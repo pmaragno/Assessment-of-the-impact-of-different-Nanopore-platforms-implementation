@@ -37,7 +37,7 @@ hits_ELIGOS <- ELIGOS_results(path_input, path_output)
 path_input                                          path to the directory containing the <eligos2.combine.txt> output files of ELIGOS analysis
 path_output                                         path to the directory where saving the plots with the overlapping between different comparisons
 
-hits_ELIGOS_granges <- hits_ELIGOS[[1]]             GRange for each comparison with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
+hits_ELIGOS_granges <- hits_ELIGOS[[1]]             For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_ELIGOS_values <- hits_ELIGOS[[2]]              For each comparison, the number of hits in sites analysable in both comparisons
 
 hits_Nanocompore <- Nanocompore_results(path_input, path_output, path_bed_3utr_top_tx)
@@ -46,7 +46,7 @@ path_input                                          path to the directory contai
 path_output                                         path to the directory where saving the plots with the overlapping between different comparisons
 path_bed_3utr_top_tx                                path to the directory containing the bed file with the 3' UTR coordinates of the selected transcripts
 
-hits_Nanocompore_granges <- hits_Nanocompore[[1]]   GRange for each comparison with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
+hits_Nanocompore_granges <- hits_Nanocompore[[1]]   For each comparison, a GRange with the hits in sites analysable in both comparisons, each range is expanded of 10 nucleotides centered around the corresponding hit
 hits_Nanocompore_values <- hits_Nanocompore[[2]]    For each comparison, the number of hits in sites analysable in both comparisons
 ```
 
